@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABM-CODING Portfolio</title>
+  <link rel="shortcut icon" href="{% static 'assets/images/logo-my.svg' %}" type="image/x-icon">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.2/css/all.css" />
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/custom_style.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    {% include 'components/_sidebar.html' %}
+    <div class="main-content">
+        {% include 'components/_navbar.html' %}
+        {% block content %}
+        {% endblock content %}
+    </div>
+  </main>
+
+
+  <script src="{% static 'assets/js/script.js' %}"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+    const firebaseConfig = {
+      apiKey: "AIzaSyAWOioye5beOx3r--LD7hsMBpn-wme4_Ag",
+      authDomain: "portfolio-ba35f.firebaseapp.com",
+      projectId: "portfolio-ba35f",
+      storageBucket: "portfolio-ba35f.appspot.com",
+      messagingSenderId: "282878344620",
+      appId: "1:282878344620:web:37e8d80296e466a8bd4e09"
+    };
+    const app = initializeApp(firebaseConfig);
+  </script>
+
+</body>
+
+</html>

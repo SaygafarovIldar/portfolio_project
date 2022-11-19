@@ -1,0 +1,18 @@
+{% load static %}
+
+<ul class="project-list">
+    {% for portfolio_item in portfolio_items %}
+        <li class="project-item  active" data-filter-item data-category="{{ portfolio_item.project_type|lower }}">
+            <a href="{{ portfolio_item.link }}" target="_blank">
+                <figure class="project-img">
+                    <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img src="{{ portfolio_item.photo.url }}" alt="{{ portfolio_item.name }}" loading="lazy">
+                </figure>
+                <h3 class="project-title">{{ portfolio_item.name }}</h3>
+                <p class="project-category">{{ portfolio_item.project_type }}</p>
+            </a>
+        </li>
+    {% endfor %}
+</ul>

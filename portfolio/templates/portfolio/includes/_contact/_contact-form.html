@@ -1,0 +1,15 @@
+<section class="contact-form">
+    <h3 class="h3 form-title">Contact Form</h3>
+    <form action="/" class="form" data-form method="post">
+        {% csrf_token %}
+        <div class="input-wrapper">
+            {{ form.full_name }}
+            {{ form.email }}
+        </div>
+        {{ form.message }}
+        <button class="form-btn" type="submit" data-form-btn>
+            <ion-icon name="paper-plane"></ion-icon>
+            <span>Send Message</span>
+        </button>
+    </form>
+</section>

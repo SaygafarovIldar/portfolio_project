@@ -1,0 +1,11 @@
+<article class="portfolio" data-page="portfolio">
+    {% include 'portfolio/includes/_portfolio/_header.html' %}
+    <section class="projects">
+        {% include 'portfolio/includes/_portfolio/_filter-list.html' %}
+
+        <div class="filter-select-box">
+            {% include 'portfolio/includes/_portfolio/_filter-select-box.html' %}
+        </div>
+        {% include 'portfolio/includes/_portfolio/_project-list.html' %}
+    </section>
+</article>

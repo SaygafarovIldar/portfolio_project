@@ -1,0 +1,10 @@
+<ul class="filter-list">
+    <li class="filter-item">
+        <button class="active" data-filter-btn>All</button>
+    </li>
+    {% for projects_type in projects_types %}
+        <li class="filter-item">
+            <button data-filter-btn>{{ projects_type }}</button>
+        </li>
+    {% endfor %}
+</ul>

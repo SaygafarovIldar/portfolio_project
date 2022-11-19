@@ -1,0 +1,27 @@
+{% for resume_category in resume_categories %}
+    <section class="timeline">
+        <div class="title-wrapper">
+            <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">{{ resume_category }}</h3>
+        </div>
+        <ol class="timeline-list">
+            {% for resumeitem in resume_category.resumeitem_set.all %}
+                <li class="timeline-item">
+                    <h4 class="h4 timeline-item-title">{{ resumeitem }}</h4>
+                    <span>
+                        {{ resumeitem.working_period_from }} — 
+                        {% if not resumeitem.is_current_year %}
+                        {{ resumeitem.working_period_to }}
+                        {% else %}
+                        Current
+                        {% endif %}
+                    </span>
+                    <p class="timeline-text">{{ resumeitem.position }}</p>
+                </li>
+            {% endfor %}
+        </ol>
+    </section>
+{% endfor %}
+
